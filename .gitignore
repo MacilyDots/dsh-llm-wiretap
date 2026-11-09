@@ -1,0 +1,7 @@
+node_modules/
+*.tgz
+*.log
+*.bak
+*.bak-*
+dist/
+.DS_Store

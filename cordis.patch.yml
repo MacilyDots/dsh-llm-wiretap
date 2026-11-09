@@ -1,0 +1,12 @@
+# dsh-llm-wiretap bundle patch: one insert row activating the plugin.
+#
+# 默认配置写在 lib/index.js 的 DEFAULT_CONFIG：
+#   enabled: true, keep: 12, maxBytes: 16MiB, pinRepeat: 100
+# 要改就在 profile 的 cordis.patch.yml 里按 id `llm-wiretap` 覆盖，例如：
+#   - id: llm-wiretap
+#     config:
+#       keep: 40
+#       pinRepeat: 100
+- insert:
+    - id: llm-wiretap
+      name: 'dsh-llm-wiretap'

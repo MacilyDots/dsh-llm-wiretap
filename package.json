@@ -1,0 +1,43 @@
+{
+  "name": "dsh-llm-wiretap",
+  "version": "0.1.2",
+  "description": "Read-only raw-stream recorder for DeepSeek Harness: intercepts POST streaming Messages/Completions requests through globalThis.fetch, records the exact request body (sampling parameters) and the untouched upstream SSE bytes, and reports the same line-repetition statistics as dsh-degen-guard so a degeneration loop can be attributed to the provider stream or to DSH's own assembly.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./sse": "./lib/sse.js",
+    "./capture": "./lib/capture.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "wiretap",
+    "sse",
+    "diagnostics"
+  ],
+  "license": "MIT",
+  "author": "MacilyDots",
+  "scripts": {
+    "test": "node test/test-sse.mjs && node test/test-wiretap.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MacilyDots/dsh-llm-wiretap.git"
+  },
+  "homepage": "https://github.com/MacilyDots/dsh-llm-wiretap#readme",
+  "bugs": {
+    "url": "https://github.com/MacilyDots/dsh-llm-wiretap/issues"
+  }
+}
